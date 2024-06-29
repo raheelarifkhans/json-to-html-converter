@@ -163,18 +163,28 @@ This PHP function takes a JSON object and converts it into a structured HTML det
 ```
 
 ### Usage
-1. Copy the generateHtmlFromJson.php file to your project.
-2. Include the file in your PHP code:
+#### Installation
+1. You can install the package via Composer. Run the following command:
 ```
-include 'src/generateHtmlFromJson.php';
+composer require raheelarifkhans/json-to-html-converter
 ```
-3. Call the generateHtmlFromJson function with your JSON data:
+2. Include the Composer autoloader in your PHP file:
+```
+require 'vendor/autoload.php';
+```
+3. Use the JsonToHtmlConverter class in your code:
+```
+use RaheelArifKhans\JsonToHtmlConverter;
+```
+4. Convert your JSON data to HTML using the generateHtmlFromJson function:
 ```
 $json = '{
     "name": "Device",
-    ...
+    "domain": "Domain"
 }';
-echo generateHtmlFromJson($json);
+$html = JsonToHtmlConverter::generateHtmlFromJson(json_decode($json, true));
+
+echo $html;
 ```
 
 ### License
